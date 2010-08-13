@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+  <h1>Upload a file</h1>
+  <p>Select a zip file to upload and search.</p>
+  <form method="post" action="{{form_url}}" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="submit" value="Upload">
+  </form>
+{% endblock %}

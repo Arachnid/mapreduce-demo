@@ -1,0 +1,14 @@
+mapreduce:
+- name: Codesearch
+  mapper:
+    input_reader: mapreduce.input_readers.BlobstoreZipInputReader
+    handler: mr.codesearch
+    params:
+    - name: file_id
+    - name: regex
+    - name: job_name
+    - name: processing_rate
+      default: 10000
+    - name: shard_count
+      default: 20
+    params_validator: mr.codesearch_validator

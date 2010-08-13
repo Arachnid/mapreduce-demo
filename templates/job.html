@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+  <h1>Job "{{job.name}}"</h1>
+  {% for result in results %}
+    <p>
+      <h2>{{result.filename}}</h2>
+      <pre>{% for match in result.matches_with_lines %}{{match.0}}: {{match.1|escape}}
+{% endfor %}</pre>
+    </p>
+  {% endfor %}
+{% endblock %}

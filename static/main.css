@@ -1,0 +1,16 @@
+html {
+  font-family: sans-serif;
+}
+
+table {
+  margin-bottom: 1em;
+}
+
+table th {
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+table td {
+  padding-right: 1em;
+}

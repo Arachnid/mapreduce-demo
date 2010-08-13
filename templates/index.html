@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+  <h1>Codesearch demo</h1>
+  
+  <h2>Uploaded files</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Filename</th></tr>
+    </thead>
+    {% for file in files %}
+      <tr><td>{{file.key.id}}</td><td>{{file.filename}}</td></tr>
+    {% endfor %}
+  </table>
+  <a href="/upload">Upload a file</a>
+  
+  <h2>Codesearch jobs</h2>
+  <table>
+    <thead>
+      <tr><th>Job</th><th>File</th><th>Regex</th><th>Started</th></tr>
+    </thead>
+    {% for job in jobs %}
+      <tr>
+        <td><a href="/job/{{job.key.id}}">{{job.name}}</a></td>
+        <td>{{job.file.filename}}</td>
+        <td>{{job.regex}}</td>
+        <td>{{job.created}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  
+  <p><a href="/mapreduce/status">Mapreduce status page</a></p>
+{% endblock %}
